@@ -1,0 +1,6 @@
+{
+  "name": "Matex AI - Cybersecurity Intelligence Platform",
+  "description": "Advanced hybrid cybersecurity AI platform combining real-time search & threat synthesis, proactive error correction, and confidence-driven SOC automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

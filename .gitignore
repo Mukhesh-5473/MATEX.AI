@@ -1,0 +1,15 @@
+# Ignore huge model weights and binaries
+*.gguf
+*.bin
+*.pkl
+cyber_distilbert_model/
+
+# Python cache & virtual environments
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
