@@ -13,3 +13,7 @@ venv/
 # Frontend dependencies and build output
 frontend/node_modules/
 frontend/dist/
+model.gguf
+cyber_distilbert_model/
+text_cyber_model.pkl
+__pycache__/
