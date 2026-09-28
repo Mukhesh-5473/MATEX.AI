@@ -6,11 +6,20 @@ import numpy as np
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from huggingface_hub import hf_hub_download
+from transformers import AutoModel, AutoTokenizer
 
-model_path = hf_hub_download(
-    repo_id="your-username/matex-ai-gguf", 
+# 1. Download/Cache the GGUF model from Hugging Face
+gguf_path = hf_hub_download(
+    repo_id="astro-mukhesh/matex-ai", 
     filename="model.gguf"
 )
+
+# Pass `gguf_path` to your llama.cpp / Ollama / local runner
+print(f"Loaded GGUF model from: {gguf_path}")
+
+# 2. Load the DistilBERT model directly from your HF repo
+tokenizer = AutoTokenizer.from_pretrained("astro-mukhesh/matex-ai", subfolder="cyber_distilbert_model")
+distilbert_model = AutoModel.from_pretrained("astro-mukhesh/matex-ai", subfolder="cyber_distilbert_model")
 
 app = Flask(__name__)
 CORS(app)  # Enables cross-origin requests from Java/C++/Node/React frontend
