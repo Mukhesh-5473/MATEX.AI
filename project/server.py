@@ -5,6 +5,12 @@ import pickle
 import numpy as np
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from huggingface_hub import hf_hub_download
+
+model_path = hf_hub_download(
+    repo_id="your-username/matex-ai-gguf", 
+    filename="model.gguf"
+)
 
 app = Flask(__name__)
 CORS(app)  # Enables cross-origin requests from Java/C++/Node/React frontend
